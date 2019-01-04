@@ -37,8 +37,11 @@ module.exports = {
     compress: true,
     port: 9000,
     proxy: {
-      '/api': {
-        target: 'http://localhost:3000/api'
+      '/api/**': {
+        target: 'http://localhost:3000/api/v1',
+        pathRewrite: { '^/api': '' },
+        secure: false,
+        logLevel: 'debug'
       }
     }
   }
