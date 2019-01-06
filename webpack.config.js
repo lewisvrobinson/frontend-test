@@ -1,8 +1,8 @@
-const path = require('path');
-const HtmlWebPackPlugin = require('html-webpack-plugin');
+const path = require('path')
+const HtmlWebPackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-  entry: './src/js/index.js',
+  entry: './src/index.js',
   output: {
     filename: 'app.js',
     path: path.resolve('./static')
@@ -37,12 +37,12 @@ module.exports = {
     compress: true,
     port: 9000,
     proxy: {
-      '/api/**': {
+      '/api/*': {
         target: 'http://localhost:3000/api/v1',
-        pathRewrite: { '^/api': '' },
+        pathRewrite: { '/api/': '' },
         secure: false,
         logLevel: 'debug'
       }
     }
   }
-};
+}
