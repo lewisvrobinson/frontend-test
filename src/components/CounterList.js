@@ -1,20 +1,27 @@
 import React from 'react'
 import Counter from './Counter'
 import { connect } from 'react-redux'
+import styled from 'styled-components'
 
+const List = styled.ul`
+  list-style: none;
+  padding: 0;
+  margin: 1em 0;
+`
 const CounterList = ({ counters }) => (
-  <ul>
+  <List>
     {counters
       ? counters.map(counter => (
-          <Counter
-            key={counter.id}
-            id={counter.id}
-            title={counter.title}
-            count={counter.count}
-          />
+          <li key={counter.id}>
+            <Counter
+              id={counter.id}
+              title={counter.title}
+              count={counter.count}
+            />
+          </li>
         ))
       : false}
-  </ul>
+  </List>
 )
 
 const mapStateToProps = state => ({
