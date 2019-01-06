@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import AddCounter from './components/AddCounter'
 import CounterList from './components/CounterList'
+import Total from './components/Total'
 import styled from 'styled-components'
 
 const Wrapper = styled.div`
@@ -17,6 +18,7 @@ export default class App extends Component {
       <Wrapper>
         <AddCounter />
         <CounterList />
+        <Total />
       </Wrapper>
     )
   }

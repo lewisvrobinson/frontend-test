@@ -66,7 +66,7 @@ const Button = styled.button`
   ${props =>
     props.disabled &&
     css`
-      background: transparent;
+      background: rgba(0, 0, 0, 0.05);;
       box-shadow: inset 0 0 0 0px transparent
     &:hover {
         cursor: not-allowed;
