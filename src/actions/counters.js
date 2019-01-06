@@ -75,7 +75,27 @@ export function decrement(id) {
   }
 }
 
-export const REMOVE_COUNTER = 'DELETE_COUNTER'
+export const ADD_COUNTER = 'ADD_COUNTER'
+export const addCounter = counters => ({
+  type: ADD_COUNTER,
+  payload: { counters }
+})
+export function add(title) {
+  return dispatch => {
+    fetch('/api/counter', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ title })
+    })
+      .then(handleErrors)
+      .then(res => res.json())
+      .then(json => dispatch(removeCounter(json)))
+  }
+}
+
+export const REMOVE_COUNTER = 'REMOVE_COUNTER'
 export const removeCounter = counters => ({
   type: REMOVE_COUNTER,
   payload: { counters }

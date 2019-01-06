@@ -4,7 +4,8 @@ import {
   FETCH_COUNTERS_FAILED,
   INCREMENT_COUNTER,
   DECREMENT_COUNTER,
-  REMOVE_COUNTER
+  REMOVE_COUNTER,
+  ADD_COUNTER
 } from '../actions/counters'
 
 const initialState = {
@@ -45,6 +46,13 @@ export default function counterReducer(state = initialState, action) {
       }
 
     case DECREMENT_COUNTER:
+      return {
+        ...state,
+        loading: false,
+        items: action.payload.counters
+      }
+
+    case ADD_COUNTER:
       return {
         ...state,
         loading: false,

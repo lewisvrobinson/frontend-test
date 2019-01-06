@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import { fetchCounters } from '../actions/counters'
 import { connect } from 'react-redux'
+import { add } from '../actions/counters'
 
 class AddCounter extends Component {
   constructor() {
@@ -12,24 +12,13 @@ class AddCounter extends Component {
     this.handleChange = this.handleChange.bind(this)
   }
 
-  addCounter(title) {
-    fetch('/api/counter', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: title
-    }).then(this.props.dispatch(fetchCounters()))
-  }
-
   handleChange() {
     this.setState({ title: this.input.value })
   }
 
   handleSubmit(event) {
-    const title = JSON.stringify({ title: this.state.title })
     event.preventDefault()
-    this.addCounter(title)
+    this.props.dispatch(add(this.state.title))
     this.input.value = ''
   }
 
