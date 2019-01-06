@@ -9,6 +9,7 @@ const Wrapper = styled.div`
   max-width: 100%;
   padding: 1em;
   background: #fff;
+  border-radius: .5rem;
 `
 export default class App extends Component {
   render() {

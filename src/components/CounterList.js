@@ -6,7 +6,17 @@ import styled from 'styled-components'
 const List = styled.ul`
   list-style: none;
   padding: 0;
-  margin: 1em 0;
+  margin: 0;
+  li:first-child {
+    > * {
+      margin-top: 2rem;
+    }
+  }
+  li:last-child {
+    > * {
+      margin-bottom: 0;
+    }
+  }
 `
 const CounterList = ({ counters }) => (
   <List>
