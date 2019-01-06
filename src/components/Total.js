@@ -30,7 +30,6 @@ const showTotal = counters => {
   counters.forEach(counter => {
     totalCount = totalCount + counter.count
   })
-  console.log(counters.length)
   return totalCount
 }
 const Total = ({ counters = [] }) => (
