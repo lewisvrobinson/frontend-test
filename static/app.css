@@ -1,0 +1,11 @@
+*>* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  font-family: sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(45deg, rgba(192, 255, 236, 0.5) 1%, rgba(135, 164, 189, 0.5) 100%), linear-gradient(-45deg, #494d71 0%, rgba(217, 230, 185, 0.5) 80%);
+}
